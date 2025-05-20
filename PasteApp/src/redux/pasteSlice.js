@@ -39,8 +39,8 @@ export const pasteSlice = createSlice({
       localStorage.removeItem("pastes");
     },
     removeFromPastes:(state,action)=>{
-        const index = state.pastes.findIndex(paste => paste.id === action.payload.id);
       const pasteId=action.payload;
+        const index = state.pastes.findIndex(paste => paste._id === pasteId);
       console.log(pasteId);
       if(index>=0){
         state.pastes.splice(index,1);
